@@ -6,6 +6,9 @@
           <v-card-title class="mx-2" style="font-size: 35px">
             {{ weatherData.city }}
             <v-spacer></v-spacer>
+            <span>{{ currentTime }}</span>
+            <v-spacer></v-spacer>
+
             {{ item.applicable_date }}
 
             <span style="font-size:20px" v-if="selectedDate">
@@ -115,7 +118,9 @@ export default {
     return {
       value: 0,
       autoInterval: null,
-      hovered: false
+      hovered: false,
+      currentDate: new Date(),
+      currentDateIterval: null
     };
   },
   created() {
@@ -123,9 +128,17 @@ export default {
       if (!this.hovered)
         this.value = (this.value + 1) % this.weatherData.data.length;
     }, 2000);
+
+    this.currentDateIterval = setInterval(
+      () => (this.currentDate = new Date()),
+      1000
+    );
   },
   computed: {
-    ...mapState("search-weather", ["weatherData", "selectedDate"])
+    ...mapState("search-weather", ["weatherData", "selectedDate"]),
+    currentTime() {
+      return this.currentDate.toString().slice(0, 24);
+    }
   },
   methods: {
     getTime(item) {
@@ -136,6 +149,7 @@ export default {
   },
   destroyed() {
     clearInterval(this.autoInterval);
+    clearInterval(this.currentDateIterval);
   }
 };
 </script>
