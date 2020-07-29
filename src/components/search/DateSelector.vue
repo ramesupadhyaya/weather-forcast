@@ -1,7 +1,7 @@
 <template>
   <v-dialog persistent :value="true" max-width="350">
     <v-card>
-      <v-card-title>Select Date Range</v-card-title>
+      <v-card-title>Select Date</v-card-title>
       <v-card-text>
         <v-date-picker
           :value="selectedDate"

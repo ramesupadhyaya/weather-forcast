@@ -6,7 +6,7 @@
           <v-card-title class="mx-2" style="font-size: 35px">
             {{ weatherData.city }}
             <v-spacer></v-spacer>
-            {{ item.applicable_date }}
+            {{ getDate(item.applicable_date) }}
 
             <span style="font-size:20px" v-if="selectedDate">
               (Time: {{ getTime(item) }})
@@ -132,6 +132,11 @@ export default {
       const dateString = new Date(item.created).toISOString();
 
       return dateString.slice(11, dateString.length - 5);
+    },
+    getDate(date) {
+      const dateString = new Date(date).toString();
+
+      return dateString.slice(0, 15);
     }
   },
   destroyed() {
