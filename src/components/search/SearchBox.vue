@@ -130,6 +130,6 @@ export default {
 .search-box {
   margin-left: 20%;
   margin-right: 20%;
-  margin-bottom: 10%;
+  margin-bottom: 25%;
 }
 </style>
