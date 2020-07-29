@@ -10,7 +10,6 @@ export const mutations = {
     state.loading = value;
   },
   setWhereOnEarthDetail(state, { key, value }) {
-    console.log(key);
     state.whereOnEarth = {
       ...state.whereOnEarth,
       [key]: value
