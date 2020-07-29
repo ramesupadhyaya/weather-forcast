@@ -50,6 +50,7 @@ export const actions = {
       commit("setLoading", false);
     } catch (err) {
       console.error(err);
+      commit("setLoading", false);
       return dispatch("setNoRecords", true);
     }
   },
@@ -79,6 +80,7 @@ export const actions = {
       : weatherData.data.consolidated_weather;
 
     if (!weatherDataList.length) {
+      commit("setLoading", false);
       return dispatch("setNoRecords", true);
     }
 

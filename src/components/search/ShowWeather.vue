@@ -163,6 +163,6 @@ export default {
   text-align: center;
 }
 .show-weather-container {
-  margin-bottom: 10%;
+  margin-bottom: 7%;
 }
 </style>

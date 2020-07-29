@@ -51,7 +51,7 @@
               :rules="[
                 v => !!v || 'Field is required.',
                 v =>
-                  (!!v && /^([0-9]+.[0-9]+),([0-9]+.[0-9]+)$/.test(v)) ||
+                  (!!v && /^([-0-9]+.[0-9]+),([-0-9]+.[0-9]+)$/.test(v)) ||
                   'Invalid Latitude and Longitude'
               ]"
             >
