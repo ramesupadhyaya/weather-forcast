@@ -16,7 +16,7 @@
             dark
           >
             <div class="header-font d-flex align-center">
-              Weather Forcast
+              Weather Forecast
             </div>
 
             <v-spacer></v-spacer>
@@ -76,7 +76,6 @@ export default {
 .header-font {
   font-weight: bolder;
   font-size: 30px;
-  font-style: italic;
   opacity: 1;
 }
 .main-content {

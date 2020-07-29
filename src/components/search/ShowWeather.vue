@@ -1,7 +1,15 @@
 <template>
-  <div v-on:mouseover="hovered = true" v-on:mouseleave="hovered = false">
+  <div
+    v-on:mouseover="hovered = true"
+    v-on:mouseleave="hovered = false"
+    class="show-weather-container"
+  >
     <v-carousel :value="value">
-      <v-carousel-item v-for="(item, i) in weatherData.data" :key="i">
+      <v-carousel-item
+        transition="scroll-x-transition"
+        v-for="(item, i) in weatherData.data"
+        :key="i"
+      >
         <v-card dark class="weather-details" height="100vh">
           <v-card-title class="mx-2" style="font-size: 35px">
             {{ weatherData.city }}
@@ -147,12 +155,14 @@ export default {
 <style scoped>
 .weather-details {
   background: rgba(0, 0, 0, 0.9);
-  /* color: black; */
   font-size: 35px !important;
 }
 .weather-font-styles {
   font-size: 25px;
   line-height: 1.6;
   text-align: center;
+}
+.show-weather-container {
+  margin-bottom: 10%;
 }
 </style>
