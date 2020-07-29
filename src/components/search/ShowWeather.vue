@@ -7,6 +7,7 @@
     <v-carousel :value="value">
       <v-carousel-item
         transition="scroll-x-transition"
+        reverse-transition="scroll-x-transition"
         v-for="(item, i) in weatherData.data"
         :key="i"
       >
